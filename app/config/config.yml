@@ -17,9 +17,11 @@ framework:
         #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_proxies: ~
-    session:         ~
     fragments:       ~
     http_method_override: true
+    translator:      ~
+    session:
+        default_locale: pl
 
 # Twig Configuration
 twig:
@@ -73,3 +75,8 @@ services:
         class: Twig_Extensions_Extension_Text
         tags:
             - { name: twig.extension }
+
+fos_user:
+    db_driver:      orm
+    firewall_name:  main
+    user_class:     dgnet\ConferiaUserBundle\Entity\User
