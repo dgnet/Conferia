@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --link mysql:mysql --name docker-sh --rm -e LANG=C.UTF-8 --volumes-from application -t -i application "$@"

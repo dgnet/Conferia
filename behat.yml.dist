@@ -1,0 +1,12 @@
+default:
+    extensions:
+        Behat\Symfony2Extension: ~
+        Behat\MinkExtension:
+            default_session: 'www'
+            base_url: 'http://172.17.42.1'
+            sessions:
+                www:
+                    symfony2: ~
+    gherkin:
+        filters:
+            tags: ~@wip

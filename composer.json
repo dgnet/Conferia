@@ -1,19 +1,19 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "dgnet/conferia",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Event manager application",
     "autoload": {
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.3.*",
+        "php": ">=5.5",
+        "symfony/symfony": "2.6.*",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
         "doctrine/dbal": "<2.5",
         "doctrine/doctrine-bundle": "~1.2",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
-        "twig/extensions": "1.0.*",
+        "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
@@ -21,10 +21,19 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "friendsofsymfony/user-bundle": "2.0.*@dev",
         "components/bootstrap": "~3.3",
         "components/jquery": "~2.1",
         "components/jqueryui": "~1.11"
+    },
+    "require-dev": {
+        "behat/behat": "~3.0.14",
+        "behat/mink": "1.6.*",
+        "behat/symfony2-extension": "~2.0",
+        "behat/mink-extension": "~2.0",
+        "behat/mink-browserkit-driver": "~1.1",
+        "phpspec/phpspec": "~2.1.0",
+        "behat/mink-goutte-driver": "1.1.*",
+        "phpunit/phpunit": "4.7.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -50,10 +59,17 @@
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_host": "CONFERIA_DATABASE_HOST",
+                "database_port": "CONFERIA_DATABASE_PORT",
+                "database_name": "CONFERIA_DATABASE_NAME",
+                "database_user": "CONFERIA_DATABASE_USER",
+                "database_password": "CONFERIA_DATABASE_PASSWORD"
+            }
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "2.6-dev"
         }
     }
 }
